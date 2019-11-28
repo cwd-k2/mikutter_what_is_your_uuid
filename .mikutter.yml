@@ -1,0 +1,10 @@
+---
+slug: :what_is_your_uuid
+depends:
+  mikutter: '3.9.0'
+  plugin:
+    - mastodon
+version: '0.1'
+author: d_flat_aug7
+name: What is your UUID
+description: お前のUUIDは何？
