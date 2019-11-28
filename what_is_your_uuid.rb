@@ -3,13 +3,10 @@ Plugin.create :what_is_your_uuid do
     attr_accessor :parsed_name
     def name
       if @parsed_name == nil
-
         name = self.display_name.dup
 
-        self.display_name.scan(/\$\{\w+\}/).each do |expr|
-          self.fields.each do |field|
-            name.gsub!(expr, field.value) if field.name == expr[2..-2]
-          end
+        self.fields.each do |field|
+          name.gsub!("${#{field.name}}", field.value)
         end
 
         @parsed_name = name
